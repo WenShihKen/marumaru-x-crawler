@@ -9,7 +9,7 @@ from datetime import datetime
 import time
 import re
 from requests import Response
-from config import SONG_LIST_FILE_NAME, SONG_DIR
+from config import SONG_LIST_FILE_NAME, LYRICS_DIR
 
 nest_asyncio.apply()
 
@@ -25,14 +25,14 @@ def remove_illegal_character(file_name: str):
 
 def write_to_file(song_dtl: dict):
 
-    os.makedirs(SONG_DIR, exist_ok=True)
+    os.makedirs(LYRICS_DIR, exist_ok=True)
 
     file_name = song_dtl["song_link"].split("/")[-1]
     song_title = song_dtl["title"]
 
     song_title = remove_illegal_character(song_title)
 
-    file_path = f"{SONG_DIR}/{song_title}_{file_name}.json"
+    file_path = f"{LYRICS_DIR}/{song_title}_{file_name}.json"
 
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(song_dtl, f, ensure_ascii=False, indent=4)
@@ -152,7 +152,7 @@ async def main():
 
             file_name = song_dtl["song_link"].split("/")[-1]
             song_title = remove_illegal_character(song_dtl["title"])
-            file_path = f"{SONG_DIR}/{song_title}_{file_name}.json"
+            file_path = f"{LYRICS_DIR}/{song_title}_{file_name}.json"
 
             if os.path.exists(file_path):
                 print(f"歌曲 {song_title} 已存在")

@@ -1,10 +1,10 @@
 # marumaru-x 歌詞備份工具 
 
-## 目標網站
-[marumaru-x](https://www.marumaru-x.com)
+## Introduction
+This is a tool to crawl song and lyrics from [marumaru-x](https://www.marumaru-x.com)
 
 
-## 安裝相依套件
+## Installation
 ```bash
 pip install -r requirement.txt
 
@@ -13,6 +13,7 @@ playwright install
 
 ## Crawling
 ```bash
+# before running, set the number of pages to scrape in config.py.
 python song_list_crawler.py
 
 python lyrics_crawler.py

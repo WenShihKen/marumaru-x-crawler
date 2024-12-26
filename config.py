@@ -6,4 +6,4 @@ TOTAL_PAGES = 1  # 如果page超過會一直顯示最後一頁的資訊，可以
 
 SONG_LIST_FILE_NAME = "SongList.json"  # 儲存歌單的檔案名稱
 
-SONG_DIR = "LYRICS_DIR"  # 儲存歌曲的目錄
+LYRICS_DIR = "LYRICS_DIR"  # 儲存歌曲的目錄
