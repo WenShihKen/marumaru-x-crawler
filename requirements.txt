@@ -1,0 +1,6 @@
+beautifulsoup4
+requests
+nest_asyncio
+playwright
+pytubefix
+ipython
