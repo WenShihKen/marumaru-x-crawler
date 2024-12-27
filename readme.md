@@ -20,6 +20,47 @@ python lyrics_crawler.py
 ``` 
 
 
+## Output 
+The crawled data will be saved in JSON format.  
+### Song List Example
+```json
+[
+    {
+        "title": "",  // song title
+        "image_url": "",  // thumbnail
+        "song_link": "",  // link to marumaru lyrics page
+        "duration": 100  // seconds
+    }
+]
+```
+
+### Lyrics Detail Example
+```json
+{
+    "title": "",
+    "image_url": "",
+    "song_link": "",
+    "duration": 100,
+    "youtube_link": "",
+    "composer": "",  // may be empty
+    "artist": "",  // may be empty
+    "arrange": "",  // may be empty
+    "lyrics_list": [
+        {
+            "start_time": 0.0,  
+            "end_time": 5.0,  
+            "lyrics": "Lyrics line 1"
+        },
+        {
+            "start_time": 5.0,
+            "end_time": 10.0,
+            "lyrics": "Lyrics line 2"
+        }
+    ],
+    "process_time": "1970-01-01 00:00:00" 
+}
+```
+
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
