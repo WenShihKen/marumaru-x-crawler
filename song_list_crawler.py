@@ -9,7 +9,6 @@ import collections
 from config import (
     MARUMARU_BASE_URL,
     HEADERS,
-    TOTAL_PAGES,
     SONG_LIST_FILE_NAME,
 )
 
@@ -29,7 +28,17 @@ else:
             existed_songs[song["song_link"].split("/")[-1]] = True
 
 try:
-    for page in range(1, TOTAL_PAGES + 1):
+    # auto get total pages
+    response = requests.get(MARUMARU_BASE_URL, headers=HEADERS)
+
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        pages_block = soup.find("span", id="vt-pagination-info")
+        total_pages = int(pages_block["data-page-count"])
+        print(f"Total pages: {total_pages}")
+
+    for page in range(1, total_pages + 1):
         print(f"scraping page {page}...")
 
         url = f"{MARUMARU_BASE_URL}{page}"

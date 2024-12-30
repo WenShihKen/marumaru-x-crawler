@@ -13,7 +13,6 @@ playwright install
 
 ## Crawling
 ```bash
-# before running, set the number of pages to scrape in config.py.
 python song_list_crawler.py
 
 python lyrics_crawler.py
